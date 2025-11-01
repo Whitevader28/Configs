@@ -70,7 +70,9 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+    git
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,9 +103,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias co='code-insiders'
-
-# Add neovim to path
-export PATH="$PATH:/opt/nvim-linux64/bin" 
+alias cd=z
+alias vim=nvim
+alias v=nvim
 
 mkcd() {
     mkdir -p "${1}"
@@ -128,21 +130,21 @@ killPort() {
   echo "Killed process $PID running on port $PORT"
 }
 
-. "$HOME/.local/bin/env"
-eval "$(uv generate-shell-completion zsh)"
-
-eval "$(zoxide init bash)"
-. "$HOME/.cargo/env"
-
-alias cd=z
+export PATH="$PATH:/opt/nvim-linux64/bin" 
+export PATH=$PATH:~/.local/bin
+export PATH=$PATH:/usr/local/go/bin
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-#export PATH="$PATH:/opt/nvim-linux64/bin"# Install Ruby Gems to ~/gems
-#export GEM_HOME="$HOME/gems"
-#export PATH="$HOME/gems/bin:$PATH"
+eval "$(uv generate-shell-completion zsh)"
 
-export PATH=$PATH:/usr/local/go/bin
+eval "$(zoxide init zsh)"
+
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
+
+
+
 

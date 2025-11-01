@@ -1,0 +1,27 @@
+zsh:
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+
+oh-my-zsh:
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+zoxide:
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+
+rg:
+sudo apt-get install ripgrep
+
+nvm:
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+
+node:
+nvm ls-remote
+nvm install v24.11.0 # latest lts at at time of writing
+
+neovim:
+sudo apt install neovim
+
+uv:
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+fzf:
+sudo apt install fzf
