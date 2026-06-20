@@ -25,3 +25,12 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 fzf:
 sudo apt install fzf
+
+make:
+sudo apt install make
+
+gcc:
+sudo apt install gcc
+
+gdb:
+sudo apt install gdb
